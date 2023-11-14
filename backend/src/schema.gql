@@ -18,5 +18,5 @@ type Mutation {
 
 input CreateProductInput {
   name: String!
-  price: Int!
+  price: Float!
 }

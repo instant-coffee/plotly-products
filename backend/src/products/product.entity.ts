@@ -12,7 +12,7 @@ export class Product {
   @Field()
   name: string;
 
-  @Column()
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
   @Field(type => Float)
   price: number;
 }
