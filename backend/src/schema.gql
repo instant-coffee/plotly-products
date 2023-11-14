@@ -11,3 +11,12 @@ type Product {
 type Query {
   products: [Product!]!
 }
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+}
+
+input CreateProductInput {
+  name: String!
+  price: Int!
+}
