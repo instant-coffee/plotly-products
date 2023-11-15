@@ -1,11 +1,12 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from 'src/products/product.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 @ObjectType()
 export class User {
   @PrimaryGeneratedColumn()
-  @Field(type => Int)
+  @Field((type) => Int)
   id: number;
 
   @Column()
@@ -13,10 +14,14 @@ export class User {
   name: string;
 
   @Column()
-  @Field(type => Int)
+  @Field((type) => Int)
   age: number;
 
   @Column()
   @Field()
   email: string;
+
+  @OneToMany(() => Product, (product) => product.user)
+  @Field((type) => [Product], { nullable: true })
+  orders?: Product[];
 }

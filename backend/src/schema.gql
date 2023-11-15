@@ -2,17 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Product {
-  id: Int!
-  name: String!
-  price: Float!
-}
-
 type User {
   id: Int!
   name: String!
   age: Int!
   email: String!
+  orders: [Product!]
+}
+
+type Product {
+  id: Int!
+  name: String!
+  price: Float!
+  user: User!
 }
 
 type Query {
