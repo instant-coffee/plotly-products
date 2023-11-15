@@ -1,4 +1,5 @@
 import './App.css'
+import { ProductForm } from './components/ProductForm';
 import { UserForm } from './components/UserForm'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
@@ -14,6 +15,7 @@ function App() {
       <div className="App">
         <h1>Ploty Product</h1>
         <UserForm />
+        <ProductForm />
       </div>
     </ApolloProvider>
   )

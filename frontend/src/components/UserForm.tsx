@@ -27,7 +27,6 @@ const UserForm = () => {
           createUserInput: { name, email, age: parseInt(age, 10) } 
         } 
       });
-      // Reset form or handle success
     } catch (err) {
       // Handle error
       console.error(err);
@@ -35,8 +34,9 @@ const UserForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className='form'>
+      <h2>Add User</h2>
+      <div className='input'>
         <label>Name:</label>
         <input
           type="text"
@@ -44,7 +44,7 @@ const UserForm = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div>
+      <div className='input'>
         <label>Email:</label>
         <input
           type="email"
@@ -52,7 +52,7 @@ const UserForm = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div>
+      <div className='input'>
         <label>Age:</label>
         <input
           type="number"
@@ -66,4 +66,4 @@ const UserForm = () => {
   );
 }
 
-export { UserForm };
+export { UserForm, CREATE_USER_MUTATION };
