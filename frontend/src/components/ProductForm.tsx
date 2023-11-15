@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client';
-
-const CREATE_PRODUCT_MUTATION = gql`
-  mutation CreateProduct($createProductInput: CreateProductInput!) {
-    createProduct(createProductInput: $createProductInput) {
-      id
-      name
-      price
-    }
-  }
-`;
+import { useMutation } from '@apollo/client';
+import { CREATE_PRODUCT_MUTATION } from '../graphql/mutations';
 
 const ProductForm = () => {
   const [name, setName] = useState('');

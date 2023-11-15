@@ -21,7 +21,7 @@ export class User {
   @Field()
   email: string;
 
-  @OneToMany(() => Product, (product) => product.user)
+  @OneToMany(() => Product, (product) => product.user, { eager: true })
   @Field((type) => [Product], { nullable: true })
   orders?: Product[];
 }

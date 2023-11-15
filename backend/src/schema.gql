@@ -22,13 +22,15 @@ type Query {
   getProduct(id: Int!): Product!
   users: [User!]!
   getUser(id: Int!): User!
+  getUserByName(name: String!): User!
 }
 
 type Mutation {
   createProduct(createProductInput: CreateProductInput!): Product!
   createUser(createUserInput: CreateUserInput!): User!
-  updateUser(updateUserInput: UpdateUserInput!): User!
+  updateUser(id: Int!, updateUserInput: UpdateUserInput!): User!
   removeUser(id: Int!): User!
+  addProductToUserOrder(userId: Int!, productId: Int!): User!
 }
 
 input CreateProductInput {
@@ -46,5 +48,4 @@ input UpdateUserInput {
   name: String
   age: Int
   email: String
-  id: Int!
 }

@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client';
-
-const CREATE_USER_MUTATION = gql`
-  mutation CreateUser($createUserInput: CreateUserInput!) {
-    createUser(createUserInput: $createUserInput) {
-      id
-      name
-      email
-      age
-    }
-  }
-`;
+import { useMutation } from '@apollo/client';
+import { CREATE_USER_MUTATION } from '../graphql/mutations';
 
 const UserForm = () => {
   const [name, setName] = useState('');
